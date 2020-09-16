@@ -11,8 +11,8 @@
 
 ### POLLING:
 
-1 - Polling consiste de um loop cuja condição de saída é a ocorrência de um evento.
-2 - Polling é simples de implementar pois está no fluxo sequencial do programa.
-3 - A desvantagem é que, se o evento não é frequente, o microcontrolador perde muito tempo fazendo o polling.
-4 - Se colocarmos instruções entre os momentos de polling, podemos criar jitter.
+*	Polling consiste de um loop cuja condição de saída é a ocorrência de um evento.
+*	Polling é simples de implementar pois está no fluxo sequencial do programa.
+*	A desvantagem é que, se o evento não é frequente, o microcontrolador perde muito tempo fazendo o polling.
+*	Se colocarmos instruções entre os momentos de polling, podemos criar jitter.
 
