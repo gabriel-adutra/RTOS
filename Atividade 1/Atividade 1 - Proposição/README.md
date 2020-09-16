@@ -9,7 +9,7 @@
 	Para acessar o código modificado que utiliza interrupções, acesse a pasta
 	"Atividade 1 Solução". Lá você encontrará uma breve descrição sobre interrupções. 
 
-### POLLING:
+### Polling:
 
 *	Polling consiste de um loop cuja condição de saída é a ocorrência de um evento.
 *	Polling é simples de implementar pois está no fluxo sequencial do programa.
