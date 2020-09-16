@@ -8,7 +8,7 @@
 	Abaixo segue um breve resumo do que são interrupções.
 	
 	
-INTERRUPÇÕES:
+### Interrupções:
 
 *	Interrupções são um mecanismo que permite o MCU ser interrompido quando o evento ocorre
 *	A vantagem é que o MCU pode fazer outras coisas enquanto o evento não ocorre
@@ -17,7 +17,7 @@ INTERRUPÇÕES:
 	
 
 
-PARA COMPILAR E GRAVAR OS ARQUIVOS NO STM32 ABRA O TERMINAL NESSA PASTA E UTILIZE OS SEGUINTES COMANDOS:
+### PARA COMPILAR E GRAVAR OS ARQUIVOS NO STM32 ABRA O TERMINAL NESSA PASTA E UTILIZE OS SEGUINTES COMANDOS:
 
 * arm-none-eabi-gcc -c -mcpu=cortex-m3 -mthumb startup_stm32f103xb.s
 * arm-none-eabi-gcc -c -mcpu=cortex-m3 -mthumb -O3 int0.c
