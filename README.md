@@ -2,8 +2,8 @@
 
 1 - Aqui estão os problemas práticos, propostos e resolvidos, das atividades da disciplina.
 
-2 - Para cada atividade existe uma pasta com os arquivos referente ao problema proposto
-e uma pasta com os arquivos referente ao problema resolvido.
+2 - Para cada atividade existe duas pastas: Uma com os arquivos referente ao problema proposto
+e a outra com os arquivos referente ao problema resolvido.
 
 3 - Em cada pasta há uma descrição sobre ela mesma em um arquivo .txt com o nome "Descrição-dessa-pasta"
 
