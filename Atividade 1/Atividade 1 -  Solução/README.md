@@ -17,7 +17,7 @@
 	
 
 
-### PARA COMPILAR E GRAVAR OS ARQUIVOS NO STM32 ABRA O TERMINAL NESSA PASTA E UTILIZE OS SEGUINTES COMANDOS:
+### Para complilar e gravar o programa no STM32 abra o terminal nessa pasta e utilize os seguintes comandos:
 
 * arm-none-eabi-gcc -c -mcpu=cortex-m3 -mthumb startup_stm32f103xb.s
 * arm-none-eabi-gcc -c -mcpu=cortex-m3 -mthumb -O3 int0.c
