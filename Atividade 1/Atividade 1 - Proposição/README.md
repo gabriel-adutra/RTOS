@@ -1,15 +1,15 @@
-1 - 	Essa pasta contém o código, fornecido pelo professor, de um 
+*	Essa pasta contém o código, fornecido pelo professor, de um 
 	programa que utiliza polling para detectar mudança de nível
 	lógico em um pino do microcontrolador.
 	
-2 -	O objetivo dessa atividade é converter esse programa, que utiliza polling, em um
+*	O objetivo dessa atividade é converter esse programa, que utiliza polling, em um
 	programa que utilize interrupções cuja finalidade é a mesma supracitada.
 
-3 -	Esta pasta contém apenas o código original, ou seja, utilizando polling. 
+*	Esta pasta contém apenas o código original, ou seja, utilizando polling. 
 	Para acessar o código modificado que utiliza interrupções, acesse a pasta
 	"Atividade 1 Solução". Lá você encontrará uma breve descrição sobre interrupções. 
 
-POLLING:
+### POLLING:
 
 1 - Polling consiste de um loop cuja condição de saída é a ocorrência de um evento.
 2 - Polling é simples de implementar pois está no fluxo sequencial do programa.
