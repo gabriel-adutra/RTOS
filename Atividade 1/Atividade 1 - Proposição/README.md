@@ -1,3 +1,5 @@
+##	Descrição dessa pasta
+
 *	Essa pasta contém o código, fornecido pelo professor, de um 
 	programa que utiliza polling para detectar mudança de nível
 	lógico em um pino do microcontrolador.
