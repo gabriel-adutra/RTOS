@@ -9,3 +9,4 @@
 *   As soluções sempre serão feitas tendo como base o STM32f103, em caso excepcional será utilizado
     o ATMega328p, se isso ocorrer haverá a informação dentro do arquivo "readme.md"
     da pasta de tal atividade onde a excpecionalidade ocorreu.
+*   As duas primeiras atividades foram teóricas e por esse motivo não se encontram nesse repositório
