@@ -1,0 +1,228 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+flash            0x0000000008000000 0x0000000000020000
+ram              0x0000000020000000 0x0000000000005000
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD build/startup_stm32f103xb.o
+LOAD build/led.o
+                0x0000000008000000                . = ORIGIN (flash)
+
+.text           0x0000000008000000      0x4ec
+                0x0000000008000000                . = ALIGN (0x4)
+ *(.vectors)
+ .vectors       0x0000000008000000      0x108 build/startup_stm32f103xb.o
+                0x0000000008000000                vectors
+ *(.text.Reset_Handler)
+ .text.Reset_Handler
+                0x0000000008000108       0x44 build/startup_stm32f103xb.o
+                0x0000000008000108                Reset_Handler
+ *(.text)
+ .text          0x000000000800014c        0x2 build/startup_stm32f103xb.o
+                0x000000000800014c                user_init
+ *fill*         0x000000000800014e        0x2 
+ .text          0x0000000008000150      0x124 build/led.o
+                0x0000000008000150                EXTI0_IRQHandler
+                0x0000000008000178                delay_dezenas_us
+                0x0000000008000224                onda_triangular
+ *(.text*)
+ .text.Default_Handler
+                0x0000000008000274        0x2 build/startup_stm32f103xb.o
+                0x0000000008000274                RTC_Alarm_IRQHandler
+                0x0000000008000274                EXTI2_IRQHandler
+                0x0000000008000274                DebugMon_Handler
+                0x0000000008000274                TIM1_CC_IRQHandler
+                0x0000000008000274                HardFault_Handler
+                0x0000000008000274                SysTick_Handler
+                0x0000000008000274                PVD_IRQHandler
+                0x0000000008000274                PendSV_Handler
+                0x0000000008000274                NMI_Handler
+                0x0000000008000274                EXTI3_IRQHandler
+                0x0000000008000274                I2C2_EV_IRQHandler
+                0x0000000008000274                UsageFault_Handler
+                0x0000000008000274                ADC1_2_IRQHandler
+                0x0000000008000274                SPI1_IRQHandler
+                0x0000000008000274                TAMPER_IRQHandler
+                0x0000000008000274                DMA1_Channel4_IRQHandler
+                0x0000000008000274                USART3_IRQHandler
+                0x0000000008000274                RTC_IRQHandler
+                0x0000000008000274                DMA1_Channel7_IRQHandler
+                0x0000000008000274                CAN1_RX1_IRQHandler
+                0x0000000008000274                TIM4_IRQHandler
+                0x0000000008000274                I2C1_EV_IRQHandler
+                0x0000000008000274                DMA1_Channel6_IRQHandler
+                0x0000000008000274                TIM3_IRQHandler
+                0x0000000008000274                RCC_IRQHandler
+                0x0000000008000274                TIM1_TRG_COM_IRQHandler
+                0x0000000008000274                DMA1_Channel1_IRQHandler
+                0x0000000008000274                EXTI15_10_IRQHandler
+                0x0000000008000274                EXTI9_5_IRQHandler
+                0x0000000008000274                SPI2_IRQHandler
+                0x0000000008000274                MemManage_Handler
+                0x0000000008000274                SVC_Handler
+                0x0000000008000274                DMA1_Channel5_IRQHandler
+                0x0000000008000274                EXTI4_IRQHandler
+                0x0000000008000274                USB_LP_CAN1_RX0_IRQHandler
+                0x0000000008000274                USB_HP_CAN1_TX_IRQHandler
+                0x0000000008000274                DMA1_Channel3_IRQHandler
+                0x0000000008000274                TIM1_UP_IRQHandler
+                0x0000000008000274                WWDG_IRQHandler
+                0x0000000008000274                TIM2_IRQHandler
+                0x0000000008000274                TIM1_BRK_IRQHandler
+                0x0000000008000274                EXTI1_IRQHandler
+                0x0000000008000274                USART2_IRQHandler
+                0x0000000008000274                I2C2_ER_IRQHandler
+                0x0000000008000274                DMA1_Channel2_IRQHandler
+                0x0000000008000274                CAN1_SCE_IRQHandler
+                0x0000000008000274                FLASH_IRQHandler
+                0x0000000008000274                BusFault_Handler
+                0x0000000008000274                USART1_IRQHandler
+                0x0000000008000274                I2C1_ER_IRQHandler
+                0x0000000008000274                USBWakeUp_IRQHandler
+ *fill*         0x0000000008000276        0x2 
+ .text.startup  0x0000000008000278      0x274 build/led.o
+                0x0000000008000278                main
+ *(.rodata)
+ *(.rodata*)
+                0x00000000080004ec                . = ALIGN (0x4)
+                0x00000000080004ec                _data_flash = .
+
+.glue_7         0x00000000080004ec        0x0
+ .glue_7        0x00000000080004ec        0x0 linker stubs
+
+.glue_7t        0x00000000080004ec        0x0
+ .glue_7t       0x00000000080004ec        0x0 linker stubs
+
+.vfp11_veneer   0x00000000080004ec        0x0
+ .vfp11_veneer  0x00000000080004ec        0x0 linker stubs
+
+.v4_bx          0x00000000080004ec        0x0
+ .v4_bx         0x00000000080004ec        0x0 linker stubs
+
+.iplt           0x00000000080004ec        0x0
+ .iplt          0x00000000080004ec        0x0 build/startup_stm32f103xb.o
+
+.rel.dyn        0x00000000080004ec        0x0
+ .rel.iplt      0x00000000080004ec        0x0 build/startup_stm32f103xb.o
+                0x0000000020000000                . = ORIGIN (ram)
+
+.data           0x0000000020000000        0x4 load address 0x00000000080004ec
+                0x0000000020000000                _data_begin = .
+ *(.data)
+ .data          0x0000000020000000        0x0 build/startup_stm32f103xb.o
+ .data          0x0000000020000000        0x2 build/led.o
+                0x0000000020000000                passo
+ *(.data*)
+                0x0000000020000004                . = ALIGN (0x4)
+ *fill*         0x0000000020000002        0x2 
+                0x0000000020000004                _data_end = .
+
+.igot.plt       0x0000000020000004        0x0 load address 0x00000000080004f0
+ .igot.plt      0x0000000020000004        0x0 build/startup_stm32f103xb.o
+
+.bss            0x0000000020000004        0x4 load address 0x00000000080004f0
+                0x0000000020000004                _bss_begin = .
+ *(.bss)
+ .bss           0x0000000020000004        0x0 build/startup_stm32f103xb.o
+ .bss           0x0000000020000004        0x1 build/led.o
+ *(.bss*)
+ *(COMMON)
+                0x0000000020000008                . = ALIGN (0x4)
+ *fill*         0x0000000020000005        0x3 
+                0x0000000020000008                _bss_end = .
+                0x0000000000000010                _stack_size = 0x10
+                0x0000000020004ff8                _stack_end = ALIGN (((ORIGIN (ram) + LENGTH (ram)) - 0x8), 0x8)
+                0x0000000020004fe8                _stack_begin = (_stack_end - _stack_size)
+                0x0000000020004fe8                . = _stack_begin
+
+._stack         0x0000000020000008       0x10 load address 0x00000000080004f4
+                0x0000000020000018                . = (. + _stack_size)
+ *fill*         0x0000000020000008       0x10 
+OUTPUT(build/led.elf elf32-littlearm)
+LOAD linker stubs
+
+.ARM.attributes
+                0x0000000000000000       0x2f
+ .ARM.attributes
+                0x0000000000000000       0x21 build/startup_stm32f103xb.o
+ .ARM.attributes
+                0x0000000000000021       0x2d build/led.o
+
+.comment        0x0000000000000000       0x59
+ .comment       0x0000000000000000       0x59 build/led.o
+                                         0x5a (size before relaxing)
+
+Cross Reference Table
+
+Symbol                                            File
+ADC1_2_IRQHandler                                 build/startup_stm32f103xb.o
+BusFault_Handler                                  build/startup_stm32f103xb.o
+CAN1_RX1_IRQHandler                               build/startup_stm32f103xb.o
+CAN1_SCE_IRQHandler                               build/startup_stm32f103xb.o
+DMA1_Channel1_IRQHandler                          build/startup_stm32f103xb.o
+DMA1_Channel2_IRQHandler                          build/startup_stm32f103xb.o
+DMA1_Channel3_IRQHandler                          build/startup_stm32f103xb.o
+DMA1_Channel4_IRQHandler                          build/startup_stm32f103xb.o
+DMA1_Channel5_IRQHandler                          build/startup_stm32f103xb.o
+DMA1_Channel6_IRQHandler                          build/startup_stm32f103xb.o
+DMA1_Channel7_IRQHandler                          build/startup_stm32f103xb.o
+DebugMon_Handler                                  build/startup_stm32f103xb.o
+EXTI0_IRQHandler                                  build/led.o
+                                                  build/startup_stm32f103xb.o
+EXTI15_10_IRQHandler                              build/startup_stm32f103xb.o
+EXTI1_IRQHandler                                  build/startup_stm32f103xb.o
+EXTI2_IRQHandler                                  build/startup_stm32f103xb.o
+EXTI3_IRQHandler                                  build/startup_stm32f103xb.o
+EXTI4_IRQHandler                                  build/startup_stm32f103xb.o
+EXTI9_5_IRQHandler                                build/startup_stm32f103xb.o
+FLASH_IRQHandler                                  build/startup_stm32f103xb.o
+HardFault_Handler                                 build/startup_stm32f103xb.o
+I2C1_ER_IRQHandler                                build/startup_stm32f103xb.o
+I2C1_EV_IRQHandler                                build/startup_stm32f103xb.o
+I2C2_ER_IRQHandler                                build/startup_stm32f103xb.o
+I2C2_EV_IRQHandler                                build/startup_stm32f103xb.o
+MemManage_Handler                                 build/startup_stm32f103xb.o
+NMI_Handler                                       build/startup_stm32f103xb.o
+PVD_IRQHandler                                    build/startup_stm32f103xb.o
+PendSV_Handler                                    build/startup_stm32f103xb.o
+RCC_IRQHandler                                    build/startup_stm32f103xb.o
+RTC_Alarm_IRQHandler                              build/startup_stm32f103xb.o
+RTC_IRQHandler                                    build/startup_stm32f103xb.o
+Reset_Handler                                     build/startup_stm32f103xb.o
+SPI1_IRQHandler                                   build/startup_stm32f103xb.o
+SPI2_IRQHandler                                   build/startup_stm32f103xb.o
+SVC_Handler                                       build/startup_stm32f103xb.o
+SysTick_Handler                                   build/startup_stm32f103xb.o
+TAMPER_IRQHandler                                 build/startup_stm32f103xb.o
+TIM1_BRK_IRQHandler                               build/startup_stm32f103xb.o
+TIM1_CC_IRQHandler                                build/startup_stm32f103xb.o
+TIM1_TRG_COM_IRQHandler                           build/startup_stm32f103xb.o
+TIM1_UP_IRQHandler                                build/startup_stm32f103xb.o
+TIM2_IRQHandler                                   build/startup_stm32f103xb.o
+TIM3_IRQHandler                                   build/startup_stm32f103xb.o
+TIM4_IRQHandler                                   build/startup_stm32f103xb.o
+USART1_IRQHandler                                 build/startup_stm32f103xb.o
+USART2_IRQHandler                                 build/startup_stm32f103xb.o
+USART3_IRQHandler                                 build/startup_stm32f103xb.o
+USBWakeUp_IRQHandler                              build/startup_stm32f103xb.o
+USB_HP_CAN1_TX_IRQHandler                         build/startup_stm32f103xb.o
+USB_LP_CAN1_RX0_IRQHandler                        build/startup_stm32f103xb.o
+UsageFault_Handler                                build/startup_stm32f103xb.o
+WWDG_IRQHandler                                   build/startup_stm32f103xb.o
+_bss_begin                                        build/startup_stm32f103xb.o
+_bss_end                                          build/startup_stm32f103xb.o
+_data_begin                                       build/startup_stm32f103xb.o
+_data_end                                         build/startup_stm32f103xb.o
+_data_flash                                       build/startup_stm32f103xb.o
+_stack_end                                        build/startup_stm32f103xb.o
+delay_dezenas_us                                  build/led.o
+main                                              build/led.o
+                                                  build/startup_stm32f103xb.o
+onda_triangular                                   build/led.o
+passo                                             build/led.o
+user_init                                         build/startup_stm32f103xb.o
+vectors                                           build/startup_stm32f103xb.o
