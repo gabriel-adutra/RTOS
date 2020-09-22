@@ -51,7 +51,7 @@ int main(void) {
 
     while (1) {
     
- 
+ 	//Nada a declarar
       
     }
 
