@@ -50,6 +50,8 @@ int main(void) {
     LED_PORT->BSRR = (1 << LED_PINNBR);
 
     while (1) {
+    
+    beatrice
       
     }
 
